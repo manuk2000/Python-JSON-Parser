@@ -23,7 +23,7 @@ def generate_json_str(count_dict=0,next_is_dict = True, indent=0):
         else:
             if i == num_elements - 1:
                 count_dict += 1
-            next_is_dict = True if count_dict == 3 else False
+            next_is_dict = random.choice([True, False]) if count_dict == 3 else False
             value = f"value_{i + 1}"
             res += f"{repr(value)},\n"
     return res
@@ -34,6 +34,6 @@ def write_file(file_path, data):
 
 
 test_file_json = "test_json.txt"
-test_json = random_json_str(6)
+test_json = random_json_str(3)
 write_file( test_file_json, test_json)
 print(test_json)
