@@ -22,7 +22,7 @@ def is_dict(data):
             is_dict(dict(item))
 
 
-def write_json_file(file_path, data):
+def write_file(file_path, data):
     with open(file_path, 'w') as file:
         file.write(str(data))
 
@@ -76,7 +76,7 @@ def change_itmes_dict(file_path, dictt, key):
     dict_tmp = input_dict()
     dictt.update(dict_tmp)
     json_str = dict_to_json_str(dictt)
-    write_json_file(file_path, json_str)
+    write_file(file_path, json_str)
 
 
 def show_dict_input_change_key(dictt):
@@ -104,7 +104,7 @@ def operation_dict(file_path, key, dictt={}):
         case '2':
             del dictt[key]
             json_str = dict_to_json_str(dictt)
-            write_json_file("tmp.txt", json_str)
+            write_file("tmp.txt", json_str)
             operation_dict(file_path, key, dictt)
             # del
         case '3':
@@ -115,7 +115,7 @@ def operation_dict(file_path, key, dictt={}):
             dict_tmp = input_dict()
             dictt.update(dict_tmp)
             json_str = dict_to_json_str(dictt)
-            write_json_file("tmp.txt", json_str)
+            write_file("tmp.txt", json_str)
             operation_dict(file_path, key, dictt)
             # insert
         case '5':
