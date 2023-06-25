@@ -7,6 +7,7 @@ def read_json_file(file_path):
         except:
             return False
 
+
 def is_json(data):
     try:
         is_dict(data)
@@ -18,7 +19,7 @@ def is_json(data):
 def is_dict(data):
     values = dict(data).values()
     for item in values:
-        if isinstance(item , dict):
+        if isinstance(item, dict):
             is_dict(dict(item))
 
 
